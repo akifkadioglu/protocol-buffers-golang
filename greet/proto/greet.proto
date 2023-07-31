@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package greet;
+
+option go_package = "github.com/akifkadioglu/protocol-buffers-golang/greet/proto";
+
+message GreetRequest {
+    string id = 1;
+}
+
+message GreetResponse {
+    string text = 1;
+}
+
+service GreetService {
+    rpc Greet (GreetRequest) returns (GreetResponse);
+}
